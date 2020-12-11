@@ -1,0 +1,9 @@
+Three test cases have been considered which are mentione dbelow.
+1. Tip% has been assumed to be not greter then 50%, if the user enters tip% that 
+   is greter then the output will be invalid and there will be an alert box.
+
+2. If the Bill Amount is less than or equal to zero, then also the result is invalid 
+   and alert box pops up. 
+
+3. Similarly if number of people is less than or equal to zero then also the result is invalid
+  and alert box pops up.   

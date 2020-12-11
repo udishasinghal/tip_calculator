@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <h1 align="center">Tip Calculator</h1>
+    <form>
+        <label for="billamt">Bill Amount</label>
+        <input type="text" name="billamt" id="billamt">
+        <br><br><br>
+        <label for="tip">Tip%</label>
+        <input type="number" name="tip" id="tip">
+        <br><br><br>
+        <label for="num">Num of People</label>
+        <input type="number" name="name" id="num">
+        <br><br><br>
+        <button id="calc" onclick="calculate()" type="button">Calculate</button>
+        <br><br><br>
+        <hr>
+        <div id="result">
+            <div id="tip_per_person">
+               
+            </div>
+            <hr>
+            <div id="total_per_person">
+               
+            </div>
+        </div>
+
+        
+       
+        
+    </form>
+    <script>
+        function calculate(){
+        let billamt = parseFloat(document.getElementById("billamt").value);
+        let tip = parseFloat(document.getElementById("tip").value);
+        let num = parseInt(document.getElementById("num").value);
+        
+        if(tip > 50){
+            window.alert("Tip can't be greater than 50.");
+            document.getElementById("result").innerHTML = "Invalid";
+            return;         
+           
+        }
+        if(num <=0 || billamt <=0){
+            window.alert("Enter Number of person");
+            document.getElementById("result").innerHTML = "Invalid";
+            return;
+        }
+        
+        let person_tip = ((tip/100)*billamt)/num;
+        let person_total = person_tip + (billamt/num);
+        console.log(person_total);
+        console.log(person_tip);
+        person_total = person_total.toFixed(2);
+        person_tip = person_tip.toFixed(2);
+
+        document.getElementById("tip_per_person").innertext = "Tip per person = $" + person_tip;
+        document.getElementById("total_per_person").innerHTML = "Total per person = $" + person_total;
+        }
+        
+
+    </script>
+    
+</body>
+</html>
